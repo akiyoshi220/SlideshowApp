@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B45821742697239D0019D834 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B45821732697239D0019D834 /* images */; };
+		B458217826972E240019D834 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458217726972E240019D834 /* DetailViewController.swift */; };
 		B4E475BA2696762000C0ADF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E475B92696762000C0ADF8 /* AppDelegate.swift */; };
 		B4E475BC2696762000C0ADF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E475BB2696762000C0ADF8 /* SceneDelegate.swift */; };
 		B4E475BE2696762000C0ADF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E475BD2696762000C0ADF8 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		B45821732697239D0019D834 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		B458217726972E240019D834 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B4E475B62696762000C0ADF8 /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E475B92696762000C0ADF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E475BB2696762000C0ADF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				B4E475C22696762300C0ADF8 /* Assets.xcassets */,
 				B4E475C42696762300C0ADF8 /* LaunchScreen.storyboard */,
 				B4E475C72696762300C0ADF8 /* Info.plist */,
+				B458217726972E240019D834 /* DetailViewController.swift */,
 			);
 			path = SlideshowApp;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				B4E475BE2696762000C0ADF8 /* ViewController.swift in Sources */,
 				B4E475BA2696762000C0ADF8 /* AppDelegate.swift in Sources */,
 				B4E475BC2696762000C0ADF8 /* SceneDelegate.swift in Sources */,
+				B458217826972E240019D834 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

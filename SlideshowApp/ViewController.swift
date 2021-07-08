@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
     
     // 画像のファイル番号
     var num: Int = 1
@@ -28,22 +30,32 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         changeImage()
         playButton.setTitle(play, for: .normal)
         
     }
-
+    @IBAction func onTapImage(_ sender: Any) {
+        print("tap")
+        performSegue(withIdentifier:"toDetailViewController", sender: self)
+    }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        print("back")
+    }
     // スライドショー
     @IBAction func autoplay(_ sender: Any) {
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(next(_:)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(next(_:)), userInfo: nil, repeats: true)
             playButton.setTitle(stop, for: .normal)
+            nextButton.isEnabled = false
+            prevButton.isEnabled = false
         } else {
             timer.invalidate()
             timer = nil
             playButton.setTitle(play, for: .normal)
+            nextButton.isEnabled = true
+            prevButton.isEnabled = true
         }
         
     }
