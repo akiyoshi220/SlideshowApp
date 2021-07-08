@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -35,29 +35,41 @@ class ViewController: UIViewController {
         playButton.setTitle(play, for: .normal)
         
     }
-    @IBAction func onTapImage(_ sender: Any) {
-        print("tap")
-        performSegue(withIdentifier:"toDetailViewController", sender: self)
-    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailViewController: DetailViewController = segue.destination as! DetailViewController
+        detailViewController.fileName = createFileName()
+    }
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         print("back")
     }
+    @IBAction func onTapImageView(_ sender: Any) {
+        stopSlideShow()
+    }
     // スライドショー
     @IBAction func autoplay(_ sender: Any) {
-        if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(next(_:)), userInfo: nil, repeats: true)
-            playButton.setTitle(stop, for: .normal)
-            nextButton.isEnabled = false
-            prevButton.isEnabled = false
-        } else {
-            timer.invalidate()
-            timer = nil
-            playButton.setTitle(play, for: .normal)
-            nextButton.isEnabled = true
-            prevButton.isEnabled = true
+        if timer == nil {runSlideShow()
+        } else {stopSlideShow()
         }
         
+    }
+    
+    func runSlideShow() {
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(next(_:)), userInfo: nil, repeats: true)
+        }
+        playButton.setTitle(stop, for: .normal)
+        nextButton.isEnabled = false
+        prevButton.isEnabled = false
+    }
+    func stopSlideShow() {
+        if timer != nil {
+            timer.invalidate()
+            timer = nil
+        }
+        playButton.setTitle(play, for: .normal)
+        nextButton.isEnabled = true
+        prevButton.isEnabled = true
     }
     
     // 次の画像を表示
@@ -87,6 +99,6 @@ class ViewController: UIViewController {
     func createFileName() -> String {
         return "images/" + String(num) + ".jpeg"
     }
-
+    
 }
 

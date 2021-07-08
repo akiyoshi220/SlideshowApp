@@ -22,9 +22,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="86e-tP-1P3" secondAttribute="height" multiplier="15:8" id="gER-nH-EPu"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="YXr-YJ-Ael" appends="YES" id="a6h-tq-F7k"/>
-                                </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qxn-aC-dFW">
                                 <rect key="frame" x="20" y="373.5" width="374" height="30"/>
@@ -52,15 +49,28 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xe-Cg-RmJ">
+                                <rect key="frame" x="20" y="124" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0xe-Cg-RmJ" secondAttribute="height" multiplier="187:100" id="FjV-Zo-VL0"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="onTapImageView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sfk-En-Th4"/>
+                                    <segue destination="Uf6-Wk-HqQ" kind="show" id="yfG-B8-fPe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qxn-aC-dFW" secondAttribute="trailing" constant="20" id="12g-bx-zJi"/>
+                            <constraint firstItem="0xe-Cg-RmJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="53m-yT-5ML"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="86e-tP-1P3" secondAttribute="trailing" constant="20" id="FE4-BI-JEs"/>
                             <constraint firstItem="qxn-aC-dFW" firstAttribute="top" secondItem="86e-tP-1P3" secondAttribute="bottom" constant="50" id="Fxm-on-5NY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0xe-Cg-RmJ" secondAttribute="trailing" constant="20" id="Pdl-KD-eEu"/>
                             <constraint firstItem="qxn-aC-dFW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TV5-S0-j26"/>
                             <constraint firstItem="86e-tP-1P3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gGi-A7-yaO"/>
+                            <constraint firstItem="0xe-Cg-RmJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nqX-A1-5AA"/>
                             <constraint firstItem="86e-tP-1P3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="wYk-dc-8mC"/>
                         </constraints>
                     </view>
@@ -69,17 +79,11 @@
                         <outlet property="nextButton" destination="dUv-df-QWv" id="HiT-xw-amK"/>
                         <outlet property="playButton" destination="0cx-ah-4M1" id="grN-Iw-eOl"/>
                         <outlet property="prevButton" destination="FC0-J6-lYf" id="6d9-bz-LD7"/>
-                        <segue destination="Uf6-Wk-HqQ" kind="show" identifier="toDetailViewController" id="UWL-PR-yVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="YXr-YJ-Ael">
-                    <connections>
-                        <action selector="aaa:" destination="BYZ-38-t0r" id="qTP-kA-JTW"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="132" y="89"/>
+            <point key="canvasLocation" x="131.8840579710145" y="88.392857142857139"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="meJ-Ce-4aS">
@@ -89,9 +93,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfi-9g-lMR">
-                                <rect key="frame" x="192" y="383" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="76T-gv-v0V">
+                                <rect key="frame" x="0.0" y="100" width="414" height="238"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="76T-gv-v0V" secondAttribute="height" multiplier="207:119" id="CNu-En-38h"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfi-9g-lMR">
+                                <rect key="frame" x="191.5" y="438" width="31" height="30"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <segue destination="NEZ-fM-clv" kind="unwind" unwindAction="unwind:" id="v0w-c8-A1c"/>
@@ -100,8 +109,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q5X-ZU-637"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tfi-9g-lMR" firstAttribute="top" secondItem="76T-gv-v0V" secondAttribute="bottom" constant="100" id="4Kf-Op-nfx"/>
+                            <constraint firstItem="tfi-9g-lMR" firstAttribute="centerX" secondItem="76T-gv-v0V" secondAttribute="centerX" id="75a-G0-p3Y"/>
+                            <constraint firstItem="76T-gv-v0V" firstAttribute="top" secondItem="Q5X-ZU-637" secondAttribute="top" constant="100" id="ICu-p8-NMz"/>
+                            <constraint firstItem="Q5X-ZU-637" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tfi-9g-lMR" secondAttribute="trailing" id="WT1-8d-icI"/>
+                            <constraint firstItem="76T-gv-v0V" firstAttribute="trailing" secondItem="Q5X-ZU-637" secondAttribute="trailing" id="c9a-RJ-Aqg"/>
+                            <constraint firstItem="tfi-9g-lMR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q5X-ZU-637" secondAttribute="leading" id="jvu-7m-wLC"/>
+                            <constraint firstItem="76T-gv-v0V" firstAttribute="leading" secondItem="Q5X-ZU-637" secondAttribute="leading" id="vZm-Ms-2ix"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ivm-FC-h4n"/>
+                    <connections>
+                        <outlet property="imageView" destination="76T-gv-v0V" id="EbR-FY-9xP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuL-9h-cgx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="NEZ-fM-clv" userLabel="Exit" sceneMemberID="exit"/>
